@@ -70,6 +70,17 @@ export class Tawk {
 
     const submiybtn = document.createElement("button");
     submiybtn.textContent = "Submit";
+    submiybtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      const formData = {
+        email: email.value,
+        message: message.value,
+      };
+
+      console.log(formData);
+      this.messageContainer.innerHTML =
+        "<h2> Thank you for your time.Someone will get back to you shortly";
+    });
 
     form.appendChild(email);
     form.appendChild(message);
